@@ -8,7 +8,7 @@ const userRoutes = require('./routes/User')
 
 const app = express();
 const port = process.env.PORT | 5050;
-app.use(bodyParser())
+app.use(bodyParser.json())
 
 app.get('/', (req, res) => {
   res.send('Hello World')
