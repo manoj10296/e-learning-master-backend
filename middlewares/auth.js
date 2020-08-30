@@ -6,11 +6,12 @@
   CognitoUser
  } = require('amazon-cognito-identity-js')
 
+ const User = require('../models/User')
  const jwt = require('jwt-decode')
 
  
 
- module.exports.auth = (info) => {
+ module.exports.auth = async (info) => {
   return new Promise((resolve) => {
     const {
       headers: {
@@ -50,8 +51,9 @@
        const cognitoUser = new CognitoUser(userData)
        cognitoUser.signInUserSession = session
 
+       //TODO 
       //  if(session.isValid()) {
-
+      //   // const userResult = await User.findOne
       //  }
     }
     
